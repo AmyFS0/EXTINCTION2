@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070a" />
+  <title>EXTINCTION2 — 3D Survival FPS</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="gameRoot">
+    <div id="menu" class="screen active">
+      <div class="menu-bg"></div>
+      <div class="scanlines"></div>
+      <div class="menu-card glass">
+        <div class="eyebrow">PROJECT E-X // 3D SURVIVAL PROTOCOL</div>
+        <h1>EXTINCTION<span>2</span></h1>
+        <p class="tagline">THE DEAD EVOLVE. <b>SO MUST YOU.</b></p>
+        <div class="menu-grid">
+          <button id="playBtn" class="primary">▶ INICIAR SUPERVIVENCIA</button>
+          <button data-panel="how">CÓMO JUGAR</button>
+          <button data-panel="levels">NIVELES</button>
+          <button data-panel="infected">INFECTADOS</button>
+          <button data-panel="loadout">ARMAMENTO</button>
+          <button data-panel="settings">CONFIGURACIÓN</button>
+        </div>
+        <div class="menu-note">FPS 3D · WASD + Mouse · Auriculares recomendados</div>
+      </div>
+      <div id="infoPanel" class="info-panel glass hidden">
+        <button id="closePanel" class="close">×</button>
+        <div id="infoContent"></div>
+      </div>
+    </div>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left glass compact">
+        <div class="stat"><span>VIDA</span><div class="bar"><i id="healthBar"></i></div><b id="healthText">100</b></div>
+        <div class="stat"><span>ARMADURA</span><div class="bar armor"><i id="armorBar"></i></div><b id="armorText">0</b></div>
+      </div>
+      <div class="hud-top glass compact">
+        <b id="levelName">DEAD CITY</b>
+        <span id="objective">ELIMINA A LOS INFECTADOS</span>
+      </div>
+      <div class="hud-right glass compact">
+        <div><span>PTS</span><b id="score">000000</b></div>
+        <div><span>COMBO</span><b id="combo">x1</b></div>
+        <div><span>MONEDAS</span><b id="coins">0</b></div>
+      </div>
+      <div class="hud-bottom glass compact">
+        <div class="ammo"><span id="weaponName">VX-9 RIFLE</span><b><i id="ammo">30</i> / <span id="reserve">150</span></b></div>
+        <div class="items"><span>🩺 <b id="medkits">1</b></span><span>🧬 <b id="dna">0</b></span><span>🔩 <b id="scrap">0</b></span></div>
+      </div>
+      <div id="crosshair"><span></span><span></span><span></span><span></span></div>
+      <div id="damageVignette"></div>
+      <div id="flash"></div>
+      <div id="message"></div>
+      <div id="interaction"></div>
+      <div id="bossBar" class="hidden glass compact"><span>SUBJECT ZERO</span><div class="bar"><i></i></div></div>
+    </div>
+
+    <div id="pause" class="screen hidden overlay">
+      <div class="glass pause-card">
+        <div class="eyebrow">SIMULATION PAUSED</div>
+        <h2>EXTINCTION2</h2>
+        <button id="resumeBtn" class="primary">REANUDAR</button>
+        <button id="menuBtn">VOLVER AL MENÚ</button>
+      </div>
+    </div>
+
+    <div id="missionEnd" class="screen hidden overlay">
+      <div class="glass result-card">
+        <div class="eyebrow">MISSION REPORT</div>
+        <h2 id="resultTitle">EXTRACTION SUCCESSFUL</h2>
+        <div id="resultStats"></div>
+        <button id="nextBtn" class="primary">SIGUIENTE NIVEL</button>
+        <button id="resultMenuBtn">MENÚ PRINCIPAL</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
